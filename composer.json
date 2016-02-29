@@ -1,0 +1,19 @@
+{
+    "name": "daleffe/phalcon-validation-validator-atleast",
+    "type": "library",
+    "description": "Phalcon validator to check if at least one field is filled",
+    "keywords": ["phalcon", "validators"],
+    "license": "MIT",
+    "authors": [
+        {"name": "Guilherme Roberge Daleffe", "email": "falecomdaleffe@gmail.com"}
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.39"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
