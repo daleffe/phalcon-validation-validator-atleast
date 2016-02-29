@@ -9,7 +9,7 @@ use Phalcon\Validation;
 
 class AtLeast extends Validator
 {
-	private $fields;
+    private $fields;
 
     /**
      * Class constructor.
@@ -35,7 +35,7 @@ class AtLeast extends Validator
      * @param  string $attribute
      * @return boolean
      */
-	public function validate(Validation $validator, $attribute)
+    public function validate(Validation $validator, $attribute)
     {
     	if (in_array($attribute, $this->fields) === true) {
     		$response = false;
