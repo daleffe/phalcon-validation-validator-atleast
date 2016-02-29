@@ -1,5 +1,5 @@
-# Phalcon Forms
-## Validator - At Least
+# Phalcon Validator
+## At Least
 Validator to check for at least one of the selected fields filled.
 
 ### Installation
