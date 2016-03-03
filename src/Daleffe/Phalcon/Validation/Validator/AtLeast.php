@@ -29,10 +29,10 @@ class AtLeast extends Validator
     }
 
     /**
-     * Executes the uniqueness validation
+     * Executes the at least validation
      *
-     * @param  \Phalcon\Validation $validator
-     * @param  string $attribute
+     * @param \Phalcon\Validation $validator
+     * @param string $attribute
      * @return boolean
      */
     public function validate(Validation $validator, $attribute)
