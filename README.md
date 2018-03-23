@@ -12,7 +12,7 @@ Update your composer.json with following options:
 			"url": "https://github.com/daleffe/phalcon-validation-validator-atleast"
 		}
 	],
-    "require": {
+        "require": {
 		  "daleffe/phalcon-validation-validator-atleast": "dev-master",
     }
 }
