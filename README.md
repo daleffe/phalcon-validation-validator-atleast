@@ -14,7 +14,7 @@ Update your composer.json with following options:
 	],
         "require": {
 		  "daleffe/phalcon-validation-validator-atleast": "dev-master",
-    }
+    	}
 }
 ```
 > I will check how to put this package in Packagist.org.
