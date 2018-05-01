@@ -41,18 +41,17 @@ class AtLeast extends Validator
     		$response = false;
 
     		foreach ($this->fields as $field) {
-                // Check if field is array
-                
-                if (strpos($field,'[]')) $field = str_replace('[]','',$field);
+                    // Check if field is array
+                    if (strpos($field,'[]')) $field = str_replace('[]','',$field);
 
-                $value = $validator->getValue($field);
+                    $value = $validator->getValue($field);
 
-                if (is_array($value)) $value = array_filter($value);
+                    if (is_array($value)) $value = array_filter($value);
 
-                if ((($value != '') and !is_null($value) and !is_array($value)) or (is_array($value) and count($value) > 0)) {
-                    $response = true;
-                    break;
-                }
+                    if ((($value != '') and !is_null($value) and !is_array($value)) or (is_array($value) and count($value) > 0)) {
+                        $response = true;
+                        break;
+                    }
     		}
 
     		if ($response === false) {
