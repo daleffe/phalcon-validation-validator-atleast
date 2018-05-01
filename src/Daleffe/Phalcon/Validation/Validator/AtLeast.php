@@ -42,6 +42,7 @@ class AtLeast extends Validator
 
     		foreach ($this->fields as $field) {
                 // Check if field is array
+                
                 if (strpos($field,'[]')) $field = str_replace('[]','',$field);
 
                 $value = $validator->getValue($field);
