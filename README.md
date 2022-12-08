@@ -4,7 +4,7 @@ Validator to check for at least one of the selected fields filled.
 
 ### Installation
 Update your composer.json with following options:
-```
+```json
 {
 	"repositories": [
 		{
