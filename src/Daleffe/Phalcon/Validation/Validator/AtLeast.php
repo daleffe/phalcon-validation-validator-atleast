@@ -2,12 +2,12 @@
 
 namespace Daleffe\Phalcon\Validation\Validator;
 
-use Phalcon\Validation\Validator;
-use Phalcon\Validation\Message;
-use Phalcon\Validation\Exception as ValidationException;
-use Phalcon\Validation;
+use Phalcon\Messages\Message;
+use Phalcon\Filter\Validation;
+use Phalcon\Filter\Validation\AbstractValidator;
+use Phalcon\Filter\Validation\Exception as ValidationException;
 
-class AtLeast extends Validator
+class AtLeast extends AbstractValidator
 {
     private $fields;
 
@@ -35,23 +35,23 @@ class AtLeast extends Validator
      * @param string $attribute
      * @return boolean
      */
-    public function validate(Validation $validator, $attribute)
+    public function validate(Validation $validator, $attribute): bool
     {
     	if (in_array($attribute, $this->fields) === true) {
     		$response = false;
 
     		foreach ($this->fields as $field) {
-                    // Check if field is array
-                    if (strpos($field,'[]')) $field = str_replace('[]','',$field);
+                // Check if field is array
+                if (strpos($field,'[]')) $field = str_replace('[]','',$field);
 
-                    $value = $validator->getValue($field);
+                $value = $validator->getValue($field);
 
-                    if (is_array($value)) $value = array_filter($value);
+                if (is_array($value)) $value = array_filter($value);
 
-                    if ((($value != '') and !is_null($value) and !is_array($value)) or (is_array($value) and count($value) > 0)) {
-                        $response = true;
-                        break;
-                    }
+                if ((($value != '') and !is_null($value) and !is_array($value)) or (is_array($value) and count($value) > 0)) {
+                    $response = true;
+                    break;
+                }
     		}
 
     		if ($response === false) {
